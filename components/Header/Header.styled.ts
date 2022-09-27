@@ -10,7 +10,7 @@ export const WelcomeUser = styled.div`
   margin-top: 0.5em;
 
   p {
-    color: ${({ theme }) => theme.textSecondaryColor};
+    color: ${({ theme }) => theme.grayColor};
   }
 
   h1 {
