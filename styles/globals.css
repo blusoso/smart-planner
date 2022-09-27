@@ -7,11 +7,23 @@ body {
   font-family: "Montserrat", sans-serif;
   color: #1e1e1e;
   font-weight: 500;
+  position: relative;
+
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 #__next {
-  padding: 1.5em 1.2em;
   height: 100%;
+  position: relative;
+}
+
+.container {
+  padding: 1.5em 1.2em;
+  position: relative;
 }
 
 a {
