@@ -2,6 +2,7 @@ import React from "react";
 import { CommonImageStyled } from "./CommonImage.styled";
 
 export type CommonImageProps = {
+  className?: string;
   src: string;
   alt?: string;
   w?: string;
@@ -11,6 +12,7 @@ export type CommonImageProps = {
 };
 
 const CommonImage = ({
+  className,
   src,
   alt,
   w,
@@ -20,6 +22,7 @@ const CommonImage = ({
 }: CommonImageProps) => {
   return (
     <CommonImageStyled
+      className={className}
       src={src}
       alt={alt || src}
       width={w}

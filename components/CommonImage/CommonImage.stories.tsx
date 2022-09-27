@@ -11,7 +11,7 @@ const Template: Story<CommonImageProps> = (args) => <CommonImage {...args} />;
 export const Avatar = Template.bind({});
 
 Avatar.args = {
-  src: "/images/avatar.png",
+  src: "/assets/images/avatar.png",
   alt: "avatar",
   w: "52px",
   h: "52px",
