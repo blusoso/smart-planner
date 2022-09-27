@@ -5,6 +5,7 @@ export enum BUTTON_TYPE {
   NONE = "none",
   PRIMARY = "primary",
   SECONDARY = "secondary",
+  SECONDARY_OUTLINE = "secondary-outline",
 }
 
 export enum BUTTON_SIZE {
@@ -14,12 +15,33 @@ export enum BUTTON_SIZE {
 }
 
 export type ButtonProps = {
+  id?: string;
+  className?: string;
   type?: BUTTON_TYPE;
   label: string;
+  icon?: string | React.ReactNode;
+  isActive?: boolean;
 };
 
-const Button = ({ label, type = BUTTON_TYPE.NONE }: ButtonProps) => {
-  return <ButtonStyled type="button">{label}</ButtonStyled>;
+const Button = ({
+  id,
+  className,
+  label,
+  type = BUTTON_TYPE.NONE,
+  icon,
+  isActive = false,
+}: ButtonProps) => {
+  return (
+    <ButtonStyled
+      id={id}
+      type="button"
+      className={`${className} ${type}`}
+      isActive={isActive}
+    >
+      {icon && <span className="mr-1">{icon}</span>}
+      {label}
+    </ButtonStyled>
+  );
 };
 
 export default Button;

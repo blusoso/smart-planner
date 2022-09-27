@@ -24,7 +24,7 @@ const Header = ({ user }: HeaderProps) => {
         isCircle
       />
       <WelcomeUser className="w-7/12 px-1">
-        <p>Welcome back 👋</p>
+        <p className="sub-p">Welcome back 👋</p>
         <h1>{user.name}</h1>
       </WelcomeUser>
       <CommonImage

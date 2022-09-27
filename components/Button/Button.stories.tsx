@@ -21,6 +21,15 @@ Primary.args = {
   label: "Button",
 };
 
+export const SecondaryOutline = Template.bind({});
+
+SecondaryOutline.args = {
+  type: BUTTON_TYPE.SECONDARY_OUTLINE,
+  label: "All",
+  icon: "🗺️",
+  isActive: false,
+};
+
 // export const Secondary = Template.bind({});
 // Secondary.args = {
 //   label: "Button",

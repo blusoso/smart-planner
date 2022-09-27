@@ -8,6 +8,9 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { ReactSVG } from "react-svg";
 import PlanningBanner from "@/components/Banner/PlanningBanner/PlanningBanner";
+import ContentHeader from "@/components/Header/ContentHeader/ContentHeader";
+import ViewAllLink from "@/components/Link/ViewAllLink/ViewAllLink";
+import SelectCategory from "@/components/Select/SelectCategory/SelectCategory";
 
 const user = {
   name: "Sopita Jullaprasertsak",
@@ -35,6 +38,19 @@ const Home: NextPage = () => {
             autoFocus
           />
           <PlanningBanner />
+          <ContentHeader
+            title="Discover World 🌈"
+            link={<ViewAllLink onClick={() => console.log("view all")} />}
+          />
+          <SelectCategory
+            categoryList={[
+              { icon: "🗺️", label: "All", isActive: true },
+              { icon: "🌲", label: "Forest", isActive: false },
+              { icon: "⛰️", label: "Mountain", isActive: false },
+              { icon: "🌲", label: "Forest", isActive: false },
+              { icon: "⛰️", label: "Mountain", isActive: false },
+            ]}
+          />
         </div>
       </main>
 
