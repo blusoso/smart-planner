@@ -15,8 +15,8 @@ export const InputWrapper = styled.div<IconPositionType>`
     fill: ${({ theme }) => theme.textSecondaryColor};
     top: 50%;
     transform: translate(0, -50%);
-    ${({ isStartIcon }) => isStartIcon && "left: 6%;"}
-    ${({ isEndIcon }) => isEndIcon && "right: 6%;"}
+    ${({ isStartIcon }) => isStartIcon && "left: 1.5em;"}
+    ${({ isEndIcon }) => isEndIcon && "right: 1.5%;"}
   }
 `;
 
@@ -27,10 +27,15 @@ export const InputStyled = styled.input<IconPositionType>`
   padding: 1.5em ${({ isEndIcon }) => (isEndIcon ? "4em" : "1.8em")} 1.2em
     ${({ isStartIcon }) => (isStartIcon ? "4em" : "1.8em")};
   box-sizing: border-box;
-  font-weight: 600;
+  font-weight: 500;
 
   &::placeholder {
     color: ${({ theme }) => theme.textSecondaryColor};
-    font-weight: 500;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  &:focus {
+    outline: none;
   }
 `;

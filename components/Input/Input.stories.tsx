@@ -12,6 +12,8 @@ const Template: Story<InputProps> = (args) => <Input {...args} />;
 export const Search = Template.bind({});
 
 Search.args = {
+  id: "search-attraction",
   placeholder: "Search Destination...",
   startIcon: <SearchOutlineIcon />,
+  autoFocus: true,
 };

@@ -3,16 +3,16 @@ import { InputWrapper, InputStyled } from "./Input.styled";
 
 export type InputProps = {
   id: string;
-  type: string;
-  name: string;
+  type?: string;
+  name?: string;
   placeholder: string;
   onClick?: () => void;
   onFocus?: () => void;
   onChange?: (value: any, name?: string) => void;
   onBlur?: () => void;
-  value: string;
-  disabled: boolean;
-  autoFocus: boolean;
+  value?: string;
+  disabled?: boolean;
+  autoFocus?: boolean;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
 };

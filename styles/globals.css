@@ -5,6 +5,8 @@ body {
   margin: 0;
   height: 100%;
   font-family: "Montserrat", sans-serif;
+  color: #1e1e1e;
+  font-weight: 500;
 }
 
 #__next {
