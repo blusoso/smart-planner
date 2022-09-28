@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/react";
-import { NextCircleIcon } from "../../Icon/NextCircleIcon/NextCircleIcon";
+import { NextCircleIcon } from "../../Icon/NextCircleIcon";
 import Banner, { BannerProps } from "./Banner";
 
 export default {

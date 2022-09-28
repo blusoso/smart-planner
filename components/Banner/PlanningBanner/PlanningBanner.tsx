@@ -1,4 +1,4 @@
-import { NextCircleIcon } from "@/components/Icon/NextCircleIcon/NextCircleIcon";
+import { NextCircleIcon } from "@/components/Icon/NextCircleIcon";
 import React from "react";
 import Banner from "../Banner/Banner";
 
