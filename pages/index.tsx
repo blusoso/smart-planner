@@ -11,11 +11,48 @@ import PlanningBanner from "@/components/Banner/PlanningBanner/PlanningBanner";
 import ContentHeader from "@/components/Header/ContentHeader/ContentHeader";
 import ViewAllLink from "@/components/Link/ViewAllLink/ViewAllLink";
 import SelectCategory from "@/components/Select/SelectCategory/SelectCategory";
+import PlaceCardList from "@/components/Listing/PlaceCardList/PlaceCardList";
 
 const user = {
   name: "Sopita Jullaprasertsak",
   avatar: "/assets/images/avatar.png",
 };
+
+const categoryList = [
+  { icon: "🗺️", label: "All", isActive: true },
+  { icon: "🌲", label: "Forest", isActive: false },
+  { icon: "⛰️", label: "Mountain", isActive: false },
+  { icon: "🌲", label: "Forest", isActive: false },
+  { icon: "⛰️", label: "Mountain", isActive: false },
+];
+
+const placeList = [
+  {
+    thumbnail: "/assets/images/sonaal-bangera.jpg",
+    title: "Grand Canyon",
+    city: "Arizona",
+    country: "United States",
+    price: 150,
+    rating: "4.3",
+    isFavorite: true,
+  },
+  {
+    thumbnail: "/assets/images/sonaal-bangera.jpg",
+    title: "Grand Canyon",
+    city: "Arizona",
+    country: "United States",
+    price: 150,
+    rating: "4.3",
+  },
+  {
+    thumbnail: "/assets/images/sonaal-bangera.jpg",
+    title: "Grand Canyon",
+    city: "Arizona",
+    country: "United States",
+    price: 150,
+    rating: "4.3",
+  },
+];
 
 const Home: NextPage = () => {
   const searchIcon = <ReactSVG src="/assets/icons/search-outline.svg" />;
@@ -43,14 +80,10 @@ const Home: NextPage = () => {
             link={<ViewAllLink onClick={() => console.log("view all")} />}
           />
           <SelectCategory
-            categoryList={[
-              { icon: "🗺️", label: "All", isActive: true },
-              { icon: "🌲", label: "Forest", isActive: false },
-              { icon: "⛰️", label: "Mountain", isActive: false },
-              { icon: "🌲", label: "Forest", isActive: false },
-              { icon: "⛰️", label: "Mountain", isActive: false },
-            ]}
+            categoryList={categoryList}
+            onClick={() => console.log("select category")}
           />
+          <PlaceCardList placeList={placeList} />
         </div>
       </main>
 
