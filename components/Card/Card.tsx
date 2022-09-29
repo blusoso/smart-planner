@@ -3,11 +3,11 @@ import { ThemeContext } from "styled-components";
 import { HeartCircleIcon } from "../Icon/HeartCircleIcon";
 import PinOutlineIcon from "../Icon/PinOutlineIcon";
 import StarIcon from "../Icon/StarIcon";
+import Location from "../Text/Location/Location";
 import {
   CardBody,
   CardWrapper,
   FavoriteButtonPosition,
-  LocationStyle,
   PriceStyle,
   RatingBadge,
   ThumbnailBackground,
@@ -78,10 +78,7 @@ const Card = ({
           )}
         </div>
         <div className="flex items-center">
-          <PinOutlineIcon iconWidth="1.125em" />
-          <LocationStyle className="pl-1">
-            {city}, {country}
-          </LocationStyle>
+          <Location city={city} country={country} />
         </div>
       </CardBody>
     </CardWrapper>

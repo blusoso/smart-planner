@@ -12,6 +12,7 @@ export const CardWrapper = styled.div`
 
 type ThumbnailBackgroundProps = {
   thumbnail: string;
+  height?: string;
 };
 
 export const ThumbnailBackground = styled.div<ThumbnailBackgroundProps>`
@@ -22,7 +23,7 @@ export const ThumbnailBackground = styled.div<ThumbnailBackgroundProps>`
   background-blend-mode: multiply;
 
   width: 100%;
-  height: 100%;
+  height: ${({ height }) => height || "100%"};
 
   border-radius: ${({ theme }) => theme.mainBorderRadius};
 `;
@@ -67,11 +68,6 @@ export const CardBody = styled.div`
   background: white;
   box-shadow: 0px 14px 28px rgba(24, 39, 75, 0.05),
     0px 18px 88px rgba(24, 39, 75, 0.05);
-`;
-
-export const LocationStyle = styled.div`
-  color: ${({ theme }) => theme.grayColor};
-  font-size: 0.75em;
 `;
 
 export const PriceStyle = styled.div`

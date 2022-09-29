@@ -1,11 +1,8 @@
 import Header from "@/components/Header/Header";
-import SearchOutlineIcon from "@/components/Icon/SearchOutlineIcon";
 import Input from "@/components/Input/Input";
 import MenuBar from "@/components/MenuBar/MenuBar";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import { ReactSVG } from "react-svg";
 import PlanningBanner from "@/components/Banner/PlanningBanner/PlanningBanner";
 import ContentHeader from "@/components/Header/ContentHeader/ContentHeader";
@@ -14,6 +11,8 @@ import SelectCategory from "@/components/Select/SelectCategory/SelectCategory";
 import PlaceCardList from "@/components/Listing/PlaceCardList/PlaceCardList";
 import MiniCalendar from "@/components/MiniCalendar/MiniCalendar";
 import NoContent from "@/components/NoContent/NoContent";
+import PlaceItemList from "@/components/Listing/PlaceItemList/PlaceItemList";
+import { EditCircleIcon } from "@/components/Icon/EditCircleIcon";
 
 const user = {
   name: "Sopita Jullaprasertsak",
@@ -53,6 +52,65 @@ const placeList = [
     country: "United States",
     price: 150,
     rating: "4.3",
+  },
+];
+
+const itemList = [
+  {
+    button: (
+      <EditCircleIcon
+        circleSize="36px"
+        iconWidth="16px"
+        isOutline
+        onClick={() => {}}
+      />
+    ),
+    city: "Chiang Mai",
+    country: "Thailand",
+    dateRange: "22 Oct - 30 Oct",
+    friendAvatarList: [
+      "/assets/images/avatar-2.png",
+      "/assets/images/avatar-5.png",
+      "/assets/images/avatar.png",
+      "/assets/images/avatar-3.png",
+      "/assets/images/avatar-4.png",
+    ],
+    image: "/assets/images/david-gardiner.jpg",
+    title: "Chiang Mai Trip",
+  },
+  {
+    button: (
+      <EditCircleIcon
+        circleSize="36px"
+        iconWidth="16px"
+        isOutline
+        onClick={function noRefCheck() {}}
+      />
+    ),
+    city: "Chiang Mai",
+    country: "Thailand",
+    dateRange: "22 Oct - 30 Oct",
+    friendAvatarList: [
+      "/assets/images/avatar-2.png",
+      "/assets/images/avatar.png",
+    ],
+    image: "/assets/images/david-gardiner.jpg",
+    title: "Chiang Mai Trip",
+  },
+  {
+    button: (
+      <EditCircleIcon
+        circleSize="36px"
+        iconWidth="16px"
+        isOutline
+        onClick={function noRefCheck() {}}
+      />
+    ),
+    city: "Chiang Mai",
+    country: "Thailand",
+    dateRange: "22 Oct - 30 Oct",
+    image: "/assets/images/david-gardiner.jpg",
+    title: "Chiang Mai Trip",
   },
 ];
 
@@ -116,6 +174,7 @@ const Home: NextPage = () => {
               subTitle="You don’t have any trip"
               title="Plan your trip now"
             />
+            <PlaceItemList itemList={itemList} />
           </>
         </div>
       </main>

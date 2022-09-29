@@ -1,14 +1,20 @@
 import styled from "styled-components";
 import { FlexCenter } from "../Mixin/Mixin.styled";
 
-export const AvatarGroupedWrapper = styled.div`
+type AvatarGroupedWrapperProps = {
+  margin?: string;
+};
+
+export const AvatarGroupedWrapper = styled.div<AvatarGroupedWrapperProps>`
   display: flex;
-  margin: 0 -0.5em;
+  margin: 0 -${({ margin }) => margin || "0.5em"};
 `;
 
 type AvatarInGroupProps = {
   w?: string;
   h?: string;
+  margin?: string;
+  fontSize?: string;
 };
 
 const AVATAR_WIDTH = "3rem";
@@ -29,5 +35,5 @@ export const RestOfAvatar = styled(FlexCenter)<AvatarInGroupProps>`
   border: 2px solid white;
   background: ${({ theme }) => theme.greenColor};
   color: white;
-  font-size: 0.9rem;
+  font-size: ${({ fontSize }) => fontSize || "0.9rem"};
 `;
