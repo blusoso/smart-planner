@@ -1,14 +1,19 @@
 import styled from "styled-components";
 
 type ButtonStyledProps = {
-  isActive: boolean;
+  padding?: string;
+  minWidth?: string;
+  fontSize?: string;
+  borderRadius?: string;
 };
 
 export const ButtonStyled = styled.button<ButtonStyledProps>`
-  font-size: 0.688em;
+  font-size: ${({ fontSize }) => fontSize || "0.688em"};
   text-transform: capitalize;
-  padding: 0.75em 1.6em;
-  border-radius: ${({ theme }) => theme.mainBorderRadius};
+  padding: ${({ padding }) => padding || "0.75em 1.6em"};
+  ${({ minWidth }) => `min-width: ${minWidth}`};
+  border-radius: ${({ borderRadius, theme }) =>
+    borderRadius || theme.mainBorderRadius};
 
   &.secondary {
     color: ${({ theme }) => theme.grayColor};

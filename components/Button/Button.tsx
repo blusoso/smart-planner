@@ -18,9 +18,13 @@ export type ButtonProps = {
   id?: string;
   className?: string;
   type?: BUTTON_TYPE;
-  label: string;
+  label?: string;
   icon?: string | React.ReactNode;
-  isActive?: boolean;
+  minWidth?: string;
+  padding?: string;
+  fontSize?: string;
+  borderRadius?: string;
+  children?: JSX.Element;
   onClick: () => void;
 };
 
@@ -30,7 +34,11 @@ const Button = ({
   label,
   type = BUTTON_TYPE.NONE,
   icon,
-  isActive = false,
+  minWidth,
+  padding,
+  fontSize,
+  borderRadius,
+  children,
   onClick,
 }: ButtonProps) => {
   return (
@@ -38,11 +46,14 @@ const Button = ({
       id={id}
       type="button"
       className={`${className} ${type}`}
-      isActive={isActive}
+      minWidth={minWidth}
+      padding={padding}
+      fontSize={fontSize}
+      borderRadius={borderRadius}
       onClick={onClick}
     >
       {icon && <span className="mr-1">{icon}</span>}
-      {label}
+      {label || children}
     </ButtonStyled>
   );
 };
