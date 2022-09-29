@@ -12,6 +12,8 @@ import ContentHeader from "@/components/Header/ContentHeader/ContentHeader";
 import ViewAllLink from "@/components/Link/ViewAllLink/ViewAllLink";
 import SelectCategory from "@/components/Select/SelectCategory/SelectCategory";
 import PlaceCardList from "@/components/Listing/PlaceCardList/PlaceCardList";
+import MiniCalendar from "@/components/MiniCalendar/MiniCalendar";
+import NoContent from "@/components/NoContent/NoContent";
 
 const user = {
   name: "Sopita Jullaprasertsak",
@@ -66,7 +68,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <div className="container">
+        <div className="container mb-20">
           <Header user={user} />
           <Input
             id="search-attraction"
@@ -75,15 +77,46 @@ const Home: NextPage = () => {
             autoFocus
           />
           <PlanningBanner />
-          <ContentHeader
-            title="Discover World 🌈"
-            link={<ViewAllLink onClick={() => console.log("view all")} />}
-          />
-          <SelectCategory
-            categoryList={categoryList}
-            onClick={() => console.log("select category")}
-          />
-          <PlaceCardList placeList={placeList} />
+          <>
+            <ContentHeader
+              title="Discover World 🌈"
+              link={<ViewAllLink onClick={() => console.log("view all")} />}
+            />
+            <SelectCategory
+              categoryList={categoryList}
+              onClick={() => console.log("select category")}
+            />
+            <PlaceCardList placeList={placeList} />
+          </>
+          <>
+            <ContentHeader
+              title="You Might Like These 🍬"
+              link={<ViewAllLink onClick={() => console.log("view all")} />}
+            />
+            <PlaceCardList placeList={placeList} />
+          </>
+          <>
+            <ContentHeader
+              title="Feeling Adventurous? 🚀"
+              link={<ViewAllLink onClick={() => console.log("view all")} />}
+            />
+            <SelectCategory
+              categoryList={categoryList}
+              onClick={() => console.log("select category")}
+            />
+            <PlaceCardList placeList={placeList} />
+          </>
+          <>
+            <ContentHeader
+              title="Upcoming Trip ✈️"
+              link={<ViewAllLink onClick={() => console.log("view all")} />}
+            />
+            <MiniCalendar />
+            <NoContent
+              subTitle="You don’t have any trip"
+              title="Plan your trip now"
+            />
+          </>
         </div>
       </main>
 
