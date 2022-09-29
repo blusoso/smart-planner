@@ -21,14 +21,14 @@ const MenuBar = ({ user }: MenuBarProps) => {
       icon: <ReactSVG src="/assets/icons/home-outline.svg" />,
       isActive: true,
       isMain: false,
-      onClick: onIconClick(),
+      onClick: onIconClick,
     },
     {
       name: "map",
       icon: <ReactSVG src="/assets/icons/map-outline.svg" />,
       isActive: false,
       isMain: false,
-      onClick: onIconClick(),
+      onClick: onIconClick,
     },
     {
       name: "plus",
@@ -39,14 +39,14 @@ const MenuBar = ({ user }: MenuBarProps) => {
       ),
       isActive: false,
       isMain: true,
-      onClick: onIconClick(),
+      onClick: onIconClick,
     },
     {
       name: "bell",
       icon: <ReactSVG src="/assets/icons/bell-outline.svg" />,
       isActive: false,
       isMain: false,
-      onClick: onIconClick(),
+      onClick: onIconClick,
     },
     {
       name: "avatar",
@@ -61,7 +61,7 @@ const MenuBar = ({ user }: MenuBarProps) => {
       ),
       isActive: false,
       isMain: false,
-      onClick: onIconClick(),
+      onClick: onIconClick,
     },
   ];
 
@@ -73,6 +73,7 @@ const MenuBar = ({ user }: MenuBarProps) => {
           iconSize={ICON_SIZE}
           isActive={menu.isActive}
           isMain={menu.isMain}
+          onClick={menu.onClick}
         >
           {menu.icon}
           {menu.isActive && (

@@ -41,6 +41,7 @@ export const CircleIconStyled = styled.div<CircleIconStyledProps>`
   height: ${({ circleSize }) => circleSize || "2em"};
   border-radius: 100%;
   position: relative;
+  cursor: pointer;
 
   svg {
     position: absolute;
@@ -51,4 +52,10 @@ export const CircleIconStyled = styled.div<CircleIconStyledProps>`
     height: ${({ iconHeight }) => iconHeight || "auto"};
     fill: ${({ color, theme }) => color || theme.greenColor};
   }
+`;
+
+export const FlexCenter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
