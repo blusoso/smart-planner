@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ThemeContext } from "styled-components";
 import { HeartCircleIcon } from "../Icon/HeartCircleIcon";
 import PinOutlineIcon from "../Icon/PinOutlineIcon";
@@ -38,9 +38,10 @@ const Card = ({
   rating,
 }: CardProps) => {
   const themeContext = useContext(ThemeContext);
+  const [isLike, setIsLike] = useState(isFavorite);
 
-  const onFavoriteClick = () => {
-    console.log("fav");
+  const toggleFavoriteButton = () => {
+    setIsLike(!isLike);
   };
 
   return (
@@ -53,22 +54,18 @@ const Card = ({
         </RatingBadge>
       )}
       <FavoriteButtonPosition>
-        {isFavorite ? (
-          <HeartCircleIcon
-            color={themeContext.lightGreenColor}
-            backgroundColor={themeContext.greenColor}
-            circleSize={HEART_ICON_CIRCLE_SIZE}
-            iconWidth={HEART_ICON_SIZE}
-            onClick={onFavoriteClick}
-          />
-        ) : (
-          <HeartCircleIcon
-            isOutline
-            circleSize={HEART_ICON_CIRCLE_SIZE}
-            iconWidth={HEART_ICON_SIZE}
-            onClick={onFavoriteClick}
-          />
-        )}
+        <HeartCircleIcon
+          color={
+            isLike ? themeContext.lightGreenColor : themeContext.greenColor
+          }
+          backgroundColor={
+            isLike ? themeContext.greenColor : themeContext.lightGreenColor
+          }
+          isOutline={!isLike}
+          circleSize={HEART_ICON_CIRCLE_SIZE}
+          iconWidth={HEART_ICON_SIZE}
+          onClick={toggleFavoriteButton}
+        />
       </FavoriteButtonPosition>
       <CardBody>
         <div className="flex items-center justify-between">
