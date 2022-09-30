@@ -6,5 +6,6 @@ type TextWithIconStyleProps = {
 
 export const TextWithIconStyle = styled.div<TextWithIconStyleProps>`
   color: ${({ theme }) => theme.grayColor};
-  font-size: ${({ fontSize }) => fontSize || "0.75em"};
+  font-size: ${({ fontSize, theme }) => fontSize || theme.smallestFontSize};
+  font-weight: 400;
 `;

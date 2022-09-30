@@ -128,14 +128,17 @@ const Home: NextPage = () => {
       <main>
         <div className="container mb-20">
           <Header user={user} />
-          <Input
-            id="search-attraction"
-            placeholder="Search Destination..."
-            startIcon={searchIcon}
-            autoFocus
-          />
+          <div className="my-4">
+            <Input
+              id="search-attraction"
+              placeholder="Search Destination..."
+              startIcon={searchIcon}
+              autoFocus
+            />
+          </div>
+
           <PlanningBanner />
-          <>
+          <div className="mt-5">
             <ContentHeader
               title="Discover World 🌈"
               link={<ViewAllLink onClick={() => console.log("view all")} />}
@@ -145,15 +148,17 @@ const Home: NextPage = () => {
               onClick={() => console.log("select category")}
             />
             <PlaceCardList placeList={placeList} />
-          </>
-          <>
+          </div>
+
+          <div className="-mt-12">
             <ContentHeader
               title="You Might Like These 🍬"
               link={<ViewAllLink onClick={() => console.log("view all")} />}
             />
             <PlaceCardList placeList={placeList} />
-          </>
-          <>
+          </div>
+
+          <div className="-mt-12">
             <ContentHeader
               title="Feeling Adventurous? 🚀"
               link={<ViewAllLink onClick={() => console.log("view all")} />}
@@ -163,19 +168,20 @@ const Home: NextPage = () => {
               onClick={() => console.log("select category")}
             />
             <PlaceCardList placeList={placeList} />
-          </>
-          <>
+          </div>
+
+          <div className="-mt-12">
             <ContentHeader
               title="Upcoming Trip ✈️"
               link={<ViewAllLink onClick={() => console.log("view all")} />}
             />
-            <MiniCalendar />
-            <NoContent
+            <MiniCalendar className="mb-4" />
+            {/* <NoContent
               subTitle="You don’t have any trip"
               title="Plan your trip now"
-            />
+            /> */}
             <PlaceItemList itemList={itemList} />
-          </>
+          </div>
         </div>
       </main>
 

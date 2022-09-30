@@ -23,8 +23,8 @@ const PlaceItemList = ({ itemList }: PlaceItemListProps) => {
               dateRange={dateRange}
               button={
                 <EditCircleIcon
-                  circleSize="36px"
-                  iconWidth="16px"
+                  circleSize="40px"
+                  iconWidth="18px"
                   isOutline
                   onClick={() => {}}
                 />

@@ -8,9 +8,9 @@ type ButtonStyledProps = {
 };
 
 export const ButtonStyled = styled.button<ButtonStyledProps>`
-  font-size: ${({ fontSize }) => fontSize || "0.688em"};
+  font-size: ${({ fontSize, theme }) => fontSize || theme.smallFontSize};
   text-transform: capitalize;
-  padding: ${({ padding }) => padding || "0.75em 1.6em"};
+  padding: ${({ padding }) => padding || "0.65em 1.6em"};
   ${({ minWidth }) => `min-width: ${minWidth}`};
   border-radius: ${({ borderRadius, theme }) =>
     borderRadius || theme.mainBorderRadius};
@@ -18,7 +18,7 @@ export const ButtonStyled = styled.button<ButtonStyledProps>`
   &.secondary {
     color: ${({ theme }) => theme.grayColor};
     background-color: ${({ theme }) => theme.lightGreenColor};
-    font-weight: 500;
+    font-weight: 400;
   }
 
   &.secondary--outline {

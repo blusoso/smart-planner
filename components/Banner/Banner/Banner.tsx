@@ -38,7 +38,7 @@ const Banner = ({
       onClick={onClick}
     >
       <BannerContent>
-        <h1>{title}</h1>
+        <h1 className="mb-1">{title}</h1>
         <p>{description}</p>
         {icon && (
           <BannerIconWrapper onClick={onClick}>{icon}</BannerIconWrapper>

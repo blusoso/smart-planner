@@ -3,11 +3,14 @@ import { format, addDays } from "date-fns";
 import Button, { BUTTON_TYPE } from "../Button/Button";
 import { DateText, MiniCalendarWrapper } from "./MiniCalendar.styled";
 
-export type MiniCalendarProps = {};
+export type MiniCalendarProps = {
+  className?: string;
+};
 
 const NUM_OF_DAYS = 10;
+const FORMAT_DATE = "dd/MM/yyyy";
 
-const MiniCalendar = ({}: MiniCalendarProps) => {
+const MiniCalendar = ({ className = "" }: MiniCalendarProps) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   let dateList: Date[] = [new Date()];
@@ -21,10 +24,10 @@ const MiniCalendar = ({}: MiniCalendarProps) => {
   };
 
   return (
-    <MiniCalendarWrapper>
+    <MiniCalendarWrapper className={className}>
       {dateList.map((date, index) => {
         const isSelected =
-          format(selectedDate, "dd/MM/yyyy") === format(date, "dd/MM/yyyy");
+          format(selectedDate, FORMAT_DATE) === format(date, FORMAT_DATE);
 
         return (
           <React.Fragment key={`date-box--${index}`}>
@@ -35,13 +38,13 @@ const MiniCalendar = ({}: MiniCalendarProps) => {
                   : BUTTON_TYPE.SECONDARY
               }
               className={index === dateList.length - 1 ? "mr-4" : ""}
-              minWidth="4.5em"
-              padding="1em"
+              minWidth="3.85em"
+              padding="1em 0"
               borderRadius="2em"
               onClick={() => handleSelectDateButton(date)}
             >
               <>
-                <p style={{ fontWeight: 500 }}>{format(date, "E")}</p>
+                <p className="text-xs m-0">{format(date, "E")}</p>
                 <DateText isSelected={isSelected}>{format(date, "d")}</DateText>
               </>
             </Button>

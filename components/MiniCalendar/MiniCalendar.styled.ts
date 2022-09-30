@@ -12,8 +12,8 @@ type DateTextProps = {
 };
 
 export const DateText = styled.h2<DateTextProps>`
-  margin-top: 0.4em;
-  font-size: 16px;
+  margin-top: 0.3em;
+  font-size: ${({ theme }) => theme.defaultFontSize};
   color: ${({ theme, isSelected }) =>
-    isSelected ? theme.greenColor : "black"};
+    isSelected ? theme.greenColor : theme.blackColor};
 `;

@@ -4,6 +4,7 @@ import { InputWrapper, InputStyled } from "./Input.styled";
 export type InputProps = {
   id: string;
   type?: string;
+  className?: string;
   name?: string;
   placeholder: string;
   onClick?: () => void;
@@ -20,6 +21,7 @@ export type InputProps = {
 const Input = ({
   id,
   type = "text",
+  className,
   name,
   placeholder,
   onClick,
@@ -38,6 +40,7 @@ const Input = ({
       <InputStyled
         id={id}
         type={type}
+        className={className}
         name={name || id}
         placeholder={placeholder}
         onClick={onClick}

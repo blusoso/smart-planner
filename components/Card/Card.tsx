@@ -24,8 +24,8 @@ export type CardProps = {
   rating?: string;
 };
 
-const HEART_ICON_CIRCLE_SIZE = "2.125em";
-const HEART_ICON_SIZE = "1.313em";
+const HEART_ICON_CIRCLE_SIZE = "2.3em";
+const HEART_ICON_SIZE = "1.4em";
 
 const Card = ({
   className = "",
@@ -50,7 +50,7 @@ const Card = ({
       {rating && (
         <RatingBadge>
           <StarIcon iconWidth="1.125em" color={themeContext.yellowColor} />
-          <span className="ml-2">{rating}</span>
+          <span className="ml-1">{rating}</span>
         </RatingBadge>
       )}
       <FavoriteButtonPosition>
@@ -68,8 +68,8 @@ const Card = ({
         />
       </FavoriteButtonPosition>
       <CardBody>
-        <div className="flex items-center justify-between">
-          <h2>{title}</h2>
+        <div className="flex items-end justify-between">
+          <h2 className="font-semibold">{title}</h2>
           {price !== 0 && (
             <PriceStyle>
               <span>$</span>
@@ -77,7 +77,7 @@ const Card = ({
             </PriceStyle>
           )}
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center mt-1">
           <Location city={city} country={country} />
         </div>
       </CardBody>

@@ -23,11 +23,12 @@ export const InputWrapper = styled.div<IconPositionType>`
 export const InputStyled = styled.input<IconPositionType>`
   width: 100%;
   border: 1px solid ${({ theme }) => theme.lightGrayColor};
-  border-radius: ${({ theme }) => theme.borderRadius};
-  padding: 1em ${({ isEndIcon }) => (isEndIcon ? "3.5em" : "1.8em")} 1em
+  border-radius: ${({ theme }) => theme.mainBorderRadius};
+  padding: 0.9em ${({ isEndIcon }) => (isEndIcon ? "3.5em" : "1.8em")} 0.9em
     ${({ isStartIcon }) => (isStartIcon ? "3.5em" : "1.8em")};
   box-sizing: border-box;
   font-weight: 500;
+  font-size: ${({ theme }) => theme.smallFontSize};
 
   &::placeholder {
     color: ${({ theme }) => theme.grayColor};

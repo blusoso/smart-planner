@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "styled-components";
 import Button, { BUTTON_TYPE } from "../../Button/Button";
 import {
   GradientOverlay,
@@ -17,8 +18,10 @@ export type SelectCategoryProps = {
 };
 
 const SelectCategory = ({ categoryList, onClick }: SelectCategoryProps) => {
+  const themeContext = useContext(ThemeContext);
+
   return (
-    <SelectCategoryContainer className="my-3">
+    <SelectCategoryContainer className="mb-4">
       <GradientOverlay />
       {categoryList.map((category: Category, index) => (
         <span key={`${category.label}-${index}`} className="mr-2">
@@ -31,6 +34,7 @@ const SelectCategory = ({ categoryList, onClick }: SelectCategoryProps) => {
             }
             label={category.label}
             icon={category.icon}
+            fontSize={themeContext.smallestFontSize}
             onClick={onClick}
           />
         </span>

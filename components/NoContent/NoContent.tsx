@@ -13,11 +13,10 @@ const NoContent = ({ title, subTitle }: NoContentProps) => {
 
   return (
     <NoContentContainer>
-      <p>{subTitle}</p>
-      <h1>{title}</h1>
+      <p className="small-font font-light">{subTitle}</p>
+      <h1 className="font-semibold mb-3">{title}</h1>
 
       <NextCircleIcon
-        className="mt-2"
         backgroundColor={themeContext.greenColor}
         color="white"
         iconWidth="30px"

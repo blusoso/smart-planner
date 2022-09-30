@@ -8,7 +8,10 @@ export type ViewAllLinkProps = {
 
 const ViewAllLink = ({ onClick }: ViewAllLinkProps) => {
   return (
-    <ViewAllLinkButton className="sub-p flex items-center" onClick={onClick}>
+    <ViewAllLinkButton
+      className="small-font flex items-center"
+      onClick={onClick}
+    >
       <span className="mr-1">View All</span>
       <ReactSVG src="/assets/icons/arrow-forward.svg" />
     </ViewAllLinkButton>

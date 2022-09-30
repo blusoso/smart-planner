@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "styled-components";
+import React from "react";
 import AvatarGrouped from "../AvatarGrouped/AvatarGrouped";
 import { ThumbnailBackground } from "../Card/Card.styled";
 import DateRange from "../Text/DateRange/DateRange";
@@ -25,12 +24,10 @@ const Item = ({
   button,
   friendAvatarList,
 }: ItemProps) => {
-  const themeContext = useContext(ThemeContext);
-
   return (
     <div className="relative grid grid-cols-12 gap-3 flex">
       <div className="col-span-3">
-        <ThumbnailBackground thumbnail={image} height="90px" />
+        <ThumbnailBackground thumbnail={image} height="85px" />
       </div>
       <div className="col-span-9 flex items-center">
         <ButtonPosition>{button}</ButtonPosition>
@@ -38,13 +35,8 @@ const Item = ({
         <div className="flex justify-between items-end w-full">
           <div>
             <ItemTitle>{title}</ItemTitle>
-            <Location
-              className="mb-1"
-              city={city}
-              country={country}
-              fontSize="10px"
-            />
-            <DateRange dateRange={dateRange} fontSize="10px" />
+            <Location className="mb-1" city={city} country={country} />
+            <DateRange dateRange={dateRange} />
           </div>
           {friendAvatarList && friendAvatarList.length > 0 && (
             <AvatarGrouped

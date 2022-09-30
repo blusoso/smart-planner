@@ -23,7 +23,7 @@ export type IconStyledProps = {
 
 export const IconStyled = styled.div<IconStyledProps>`
   svg {
-    width: ${({ iconWidth }) => iconWidth || "1.75em"};
+    width: ${({ iconWidth }) => iconWidth || "1.8em"};
     height: ${({ iconHeight }) => iconHeight || "auto"};
     fill: ${({ color, theme }) => color || theme.greenColor};
   }
@@ -37,8 +37,8 @@ export type CircleIconStyledProps = {
 export const CircleIconStyled = styled.div<CircleIconStyledProps>`
   background: ${({ theme, backgroundColor }) =>
     backgroundColor || theme.lightGreenColor};
-  width: ${({ circleSize }) => circleSize || "2em"};
-  height: ${({ circleSize }) => circleSize || "2em"};
+  width: ${({ circleSize }) => circleSize || "2.3em"};
+  height: ${({ circleSize }) => circleSize || "2.3em"};
   border-radius: 100%;
   position: relative;
   cursor: pointer;

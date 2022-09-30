@@ -42,11 +42,11 @@ export const RatingBadge = styled(TopCardPosition)`
   width: fit-content;
 
   background: ${({ theme }) => theme.lightGreenColor};
-  padding: 0.5em 1em;
+  padding: 0.5em 0.8em;
   border-radius: ${({ theme }) => theme.mainBorderRadius};
 
   span {
-    font-size: 0.688em;
+    font-size: ${({ theme }) => theme.smallestFontSize};
     font-weight: 600;
   }
 `;
@@ -63,7 +63,7 @@ export const CardBody = styled.div`
   z-index: 2;
   width: 14.5em;
 
-  padding: 1.125em 1.125em;
+  padding: 0.7em 1.125em;
   border-radius: ${({ theme }) => theme.mainBorderRadius};
   background: white;
   box-shadow: 0px 14px 28px rgba(24, 39, 75, 0.05),
@@ -71,8 +71,8 @@ export const CardBody = styled.div`
 `;
 
 export const PriceStyle = styled.div`
-  font-weight: 700;
-  font-size: 0.875em;
+  font-weight: 600;
+  font-size: ${({ theme }) => theme.smallFontSize};
 
   span:first-child {
     color: ${({ theme }) => theme.greenColor};
