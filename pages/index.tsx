@@ -1,6 +1,5 @@
 import Header from "@/components/Header/Header";
 import Input from "@/components/Input/Input";
-import MenuBar from "@/components/MenuBar/MenuBar";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { ReactSVG } from "react-svg";
@@ -13,11 +12,7 @@ import MiniCalendar from "@/components/MiniCalendar/MiniCalendar";
 import NoContent from "@/components/NoContent/NoContent";
 import PlaceItemList from "@/components/Listing/PlaceItemList/PlaceItemList";
 import { EditCircleIcon } from "@/components/Icon/EditCircleIcon";
-
-const user = {
-  name: "Sopita Jullaprasertsak",
-  avatar: "/assets/images/avatar.png",
-};
+import Layout, { user } from "@/components/Layout/Layout";
 
 const categoryList = [
   { icon: "🗺️", label: "All", isActive: true },
@@ -33,6 +28,7 @@ const placeList = [
     title: "Grand Canyon",
     city: "Arizona",
     country: "United States",
+    slug: "grand-canyon-arizina-united-states",
     price: 150,
     rating: "4.3",
     isFavorite: true,
@@ -42,6 +38,7 @@ const placeList = [
     title: "Grand Canyon",
     city: "Arizona",
     country: "United States",
+    slug: "grand-canyon-arizina-united-states",
     price: 150,
     rating: "4.3",
   },
@@ -50,6 +47,7 @@ const placeList = [
     title: "Grand Canyon",
     city: "Arizona",
     country: "United States",
+    slug: "grand-canyon-arizina-united-states",
     price: 150,
     rating: "4.3",
   },
@@ -125,8 +123,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <div className="container mb-20">
+      <Layout>
+        <>
           <Header user={user} />
           <div className="my-4">
             <Input
@@ -182,10 +180,8 @@ const Home: NextPage = () => {
             /> */}
             <PlaceItemList itemList={itemList} />
           </div>
-        </div>
-      </main>
-
-      <MenuBar user={user} />
+        </>
+      </Layout>
     </div>
   );
 };

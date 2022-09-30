@@ -1,16 +1,16 @@
 import React from "react";
-import { Menu, MenuBarContainer, PlusCircle } from "./MenuBar.styled";
+import { Menu, TabBarContainer, PlusCircle } from "./TabBar.styled";
 import { ReactSVG } from "react-svg";
 import CommonImage from "../CommonImage/CommonImage";
 import { UserInfo } from "../Header/Header";
 
-export type MenuBarProps = {
+export type TabBarProps = {
   user: UserInfo;
 };
 
 const ICON_SIZE = "28px";
 
-const MenuBar = ({ user }: MenuBarProps) => {
+const TabBar = ({ user }: TabBarProps) => {
   const onIconClick = () => {
     console.log("first");
   };
@@ -66,7 +66,7 @@ const MenuBar = ({ user }: MenuBarProps) => {
   ];
 
   return (
-    <MenuBarContainer className="grid grid-cols-5">
+    <TabBarContainer className="grid grid-cols-5">
       {MENU_LIST.map((menu) => (
         <Menu
           key={menu.name}
@@ -84,8 +84,8 @@ const MenuBar = ({ user }: MenuBarProps) => {
           )}
         </Menu>
       ))}
-    </MenuBarContainer>
+    </TabBarContainer>
   );
 };
 
-export default MenuBar;
+export default TabBar;

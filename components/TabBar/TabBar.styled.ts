@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MenuBarContainer = styled.div`
+export const TabBarContainer = styled.div`
   position: fixed;
   bottom: 0;
   background: white;

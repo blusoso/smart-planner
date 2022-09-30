@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import Link from "next/link";
 import { ThemeContext } from "styled-components";
 import { HeartCircleIcon } from "../Icon/HeartCircleIcon";
 import PinOutlineIcon from "../Icon/PinOutlineIcon";
@@ -18,6 +19,7 @@ export type CardProps = {
   thumbnail: string;
   isFavorite?: boolean;
   title: string;
+  slug?: string;
   city: string;
   country: string;
   price?: number;
@@ -32,6 +34,7 @@ const Card = ({
   thumbnail,
   isFavorite = false,
   title,
+  slug,
   city,
   country,
   price = 0,
@@ -46,13 +49,6 @@ const Card = ({
 
   return (
     <CardWrapper className={className}>
-      <ThumbnailBackground thumbnail={thumbnail} />
-      {rating && (
-        <RatingBadge>
-          <StarIcon iconWidth="1.125em" color={themeContext.yellowColor} />
-          <span className="ml-1">{rating}</span>
-        </RatingBadge>
-      )}
       <FavoriteButtonPosition>
         <HeartCircleIcon
           color={
@@ -67,20 +63,31 @@ const Card = ({
           onClick={toggleFavoriteButton}
         />
       </FavoriteButtonPosition>
-      <CardBody>
-        <div className="flex items-end justify-between">
-          <h2 className="font-semibold">{title}</h2>
-          {price !== 0 && (
-            <PriceStyle>
-              <span>$</span>
-              <span>{price}</span>
-            </PriceStyle>
+      <Link href={`/${slug}`}>
+        <a>
+          <ThumbnailBackground thumbnail={thumbnail} />
+          {rating && (
+            <RatingBadge>
+              <StarIcon iconWidth="1.125em" color={themeContext.yellowColor} />
+              <span className="ml-1">{rating}</span>
+            </RatingBadge>
           )}
-        </div>
-        <div className="flex items-center mt-1">
-          <Location city={city} country={country} />
-        </div>
-      </CardBody>
+          <CardBody>
+            <div className="flex items-end justify-between">
+              <h2 className="font-semibold">{title}</h2>
+              {price !== 0 && (
+                <PriceStyle>
+                  <span>$</span>
+                  <span>{price}</span>
+                </PriceStyle>
+              )}
+            </div>
+            <div className="flex items-center mt-1">
+              <Location city={city} country={country} />
+            </div>
+          </CardBody>
+        </a>
+      </Link>
     </CardWrapper>
   );
 };

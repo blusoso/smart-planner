@@ -15,7 +15,16 @@ const PlaceCardList = ({ placeList }: PlaceCardListProps) => {
       <PlaceCardListContainer>
         {placeList.map(
           (
-            { thumbnail, title, city, country, price, rating, isFavorite },
+            {
+              thumbnail,
+              title,
+              city,
+              country,
+              slug,
+              price,
+              rating,
+              isFavorite,
+            },
             index
           ) => (
             <React.Fragment key={`${title}-${city}-${country}-${index}`}>
@@ -25,6 +34,7 @@ const PlaceCardList = ({ placeList }: PlaceCardListProps) => {
                 title={title}
                 city={city}
                 country={country}
+                slug={slug}
                 price={price}
                 rating={rating}
                 isFavorite={isFavorite}

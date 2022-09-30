@@ -24,11 +24,11 @@ export const InputStyled = styled.input<IconPositionType>`
   width: 100%;
   border: 1px solid ${({ theme }) => theme.lightGrayColor};
   border-radius: ${({ theme }) => theme.mainBorderRadius};
-  padding: 0.9em ${({ isEndIcon }) => (isEndIcon ? "3.5em" : "1.8em")} 0.9em
+  padding: 0.75em ${({ isEndIcon }) => (isEndIcon ? "3.5em" : "1.8em")} 0.75em
     ${({ isStartIcon }) => (isStartIcon ? "3.5em" : "1.8em")};
   box-sizing: border-box;
   font-weight: 500;
-  font-size: ${({ theme }) => theme.smallFontSize};
+  font-size: ${({ theme }) => theme.defaultFontSize};
 
   &::placeholder {
     color: ${({ theme }) => theme.grayColor};
