@@ -25,7 +25,7 @@ const LinkBox = ({
       hasValue={!!value}
       onClick={onClick}
     >
-      <p>{label}</p>
+      <div className="label">{label}</div>
       {value && (
         <LinkBoxSecondary>
           {value}

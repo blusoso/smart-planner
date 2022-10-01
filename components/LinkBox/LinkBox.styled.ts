@@ -15,7 +15,7 @@ export const LinkBoxContainer = styled.div<LinkBoxContainerProps>`
   color: ${({ theme }) => theme.greenColor};
   font-size: ${({ theme }) => theme.smallFontSize};
 
-  p {
+  .label {
     font-weight: 500;
   }
 `;
