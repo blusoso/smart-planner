@@ -19,7 +19,7 @@ export const NextCircleIcon = ({
 }: NextCircleIconProps) => {
   return (
     <CircleIcon
-      className={`m-auto ${className}`}
+      className={`${className}`}
       iconWidth={iconWidth || "1.375em"}
       iconHeight="auto"
       backgroundColor={backgroundColor || "white"}

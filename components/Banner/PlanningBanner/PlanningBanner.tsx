@@ -14,7 +14,7 @@ const PlanningBanner = () => {
       isGreenOverlay
       title="Start Planning"
       description="Auto generate your plan"
-      icon={<NextCircleIcon />}
+      icon={<NextCircleIcon className="m-auto" />}
       onClick={onPlanningBannerClick}
     />
   );

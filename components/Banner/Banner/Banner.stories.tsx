@@ -17,6 +17,6 @@ PlanningBanner.args = {
   isGreenOverlay: true,
   title: "Start Planning",
   description: "Auto generate your plan",
-  icon: <NextCircleIcon />,
+  icon: <NextCircleIcon className="m-auto" />,
   onClick: () => console.log("clicked"),
 };

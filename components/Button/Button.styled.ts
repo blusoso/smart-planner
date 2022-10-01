@@ -1,27 +1,40 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-type ButtonStyledProps = {
+type BaseButtonProps = {
   padding?: string;
   minWidth?: string;
-  fontSize?: string;
   borderRadius?: string;
 };
+
+const BaseButton = ({
+  padding,
+  minWidth,
+  borderRadius,
+}: BaseButtonProps) => css`
+  padding: ${padding || "0.65em 1.6em"};
+  ${minWidth && `min-width: ${minWidth}`};
+  border-radius: ${borderRadius || "25px"};
+`;
+
+type ButtonStyledProps = {
+  fontSize?: string;
+} & BaseButtonProps;
 
 export const ButtonStyled = styled.button<ButtonStyledProps>`
   font-size: ${({ fontSize, theme }) => fontSize || theme.smallFontSize};
   text-transform: capitalize;
-  padding: ${({ padding }) => padding || "0.65em 1.6em"};
-  ${({ minWidth }) => `min-width: ${minWidth}`};
-  border-radius: ${({ borderRadius, theme }) =>
-    borderRadius || theme.mainBorderRadius};
 
   &.secondary {
+    ${({ padding, minWidth, borderRadius }) =>
+      BaseButton({ padding, minWidth, borderRadius })}
     color: ${({ theme }) => theme.grayColor};
     background-color: ${({ theme }) => theme.lightGreenColor};
     font-weight: 400;
   }
 
   &.secondary--outline {
+    ${({ padding, minWidth, borderRadius }) =>
+      BaseButton({ padding, minWidth, borderRadius })}
     color: ${({ theme }) => theme.greenColor};
     background-color: ${({ theme }) => theme.lightGreenColor};
     font-weight: 600;
