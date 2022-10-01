@@ -1,12 +1,12 @@
 import { Meta, Story } from "@storybook/react";
-import ReviewBox, { ReviewBoxProps } from "./ReviewBox";
+import RatingBox, { RatingBoxProps } from "./RatingBox";
 
 export default {
-  title: "App/ReviewBox",
-  component: ReviewBox,
+  title: "App/RatingBox",
+  component: RatingBox,
 } as Meta;
 
-const Template: Story<ReviewBoxProps> = (args) => <ReviewBox {...args} />;
+const Template: Story<RatingBoxProps> = (args) => <RatingBox {...args} />;
 
 export const ReviewWithRatingBox = Template.bind({});
 

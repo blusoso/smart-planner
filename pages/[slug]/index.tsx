@@ -11,6 +11,7 @@ import Content from "@/components/Content/Content";
 import Rating from "@/components/Rating/Rating";
 import ContentHeader from "@/components/Header/ContentHeader/ContentHeader";
 import PlusCircleIcon from "@/components/Icon/PlusCircleIcon";
+import RatingBox from "@/components/RatingBox/RatingBox";
 
 const IMAGES = [
   "/assets/images/sonaal-bangera.jpg",
@@ -52,6 +53,8 @@ const avatarList = [
   "/assets/images/avatar-5.png",
 ];
 
+const ratingList = [5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 3, 2];
+
 const Place = () => {
   const { title, city, country, price } = placeInfo;
 
@@ -90,6 +93,7 @@ const Place = () => {
               }
               onClick={() => console.log("link box")}
             />
+            <RatingBox ratingList={ratingList} />
           </>
         </Layout>
       </RoundedCornerContent>
