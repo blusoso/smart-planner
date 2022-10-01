@@ -8,6 +8,7 @@ const mainTheme = {
   overlayGreenColor: "rgba(33, 186, 113, 70%)",
 
   mainBorderRadius: "1.56em",
+  secondaryBorderRadius: "20px",
 };
 
 const fontSize = {

@@ -1,5 +1,9 @@
 import React from "react";
-import { ArrowButton, FullBackground } from "./ImageSlider.styled";
+import {
+  ArrowButton,
+  FullBackground,
+  SlidePagination,
+} from "./ImageSlider.styled";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import ArrowIosForward from "../Icon/ArrowIosForward";
@@ -35,6 +39,8 @@ const ImageSlider = ({ images, height }: ImageSliderProps) => {
             <ArrowIosForward />
           </ArrowButton>
         </div>
+
+        <SlidePagination className="splide__pagination"></SlidePagination>
       </Splide>
     </>
   );

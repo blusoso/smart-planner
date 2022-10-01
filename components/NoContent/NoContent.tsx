@@ -17,6 +17,7 @@ const NoContent = ({ title, subTitle }: NoContentProps) => {
       <h1 className="font-semibold mb-3">{title}</h1>
 
       <NextCircleIcon
+        className="m-auto"
         backgroundColor={themeContext.greenColor}
         color="white"
         iconWidth="30px"

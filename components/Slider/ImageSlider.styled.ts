@@ -24,3 +24,7 @@ export const ArrowButton = styled.button`
     opacity: 0.8 !important;
   }
 `;
+
+export const SlidePagination = styled.ul`
+  bottom: 2.3em;
+`;
