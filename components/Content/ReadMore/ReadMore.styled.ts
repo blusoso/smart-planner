@@ -11,6 +11,6 @@ export const ReadMoreStyle = styled.span`
   span:last-child {
     padding-left: 3px;
     color: ${({ theme }) => theme.greenColor};
-    font-weight: 500;
+    font-weight: 600;
   }
 `;

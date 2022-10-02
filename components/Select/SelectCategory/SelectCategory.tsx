@@ -6,7 +6,7 @@ import {
 } from "./SelectCategory.styled";
 
 export type Category = {
-  icon: string | React.ReactNode;
+  icon?: string | React.ReactNode;
   label: string;
   isActive: boolean;
 };

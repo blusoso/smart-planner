@@ -24,6 +24,14 @@ export const ButtonStyled = styled.button<ButtonStyledProps>`
   font-size: ${({ fontSize, theme }) => fontSize || theme.smallFontSize};
   text-transform: capitalize;
 
+  &.primary {
+    ${({ padding, minWidth, borderRadius }) =>
+      BaseButton({ padding, minWidth, borderRadius })}
+    color: white;
+    background-color: ${({ theme }) => theme.greenColor};
+    font-weight: 500;
+  }
+
   &.secondary {
     ${({ padding, minWidth, borderRadius }) =>
       BaseButton({ padding, minWidth, borderRadius })}

@@ -45,7 +45,7 @@ const Button = ({
     <ButtonStyled
       id={id}
       type="button"
-      className={`${className} ${type}`}
+      className={`flex items-center ${className} ${type}`}
       minWidth={minWidth}
       padding={padding}
       fontSize={fontSize}

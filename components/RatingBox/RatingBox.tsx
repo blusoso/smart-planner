@@ -1,7 +1,5 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "styled-components";
+import React from "react";
 import { average, shortNumberFormat } from "../../utils/number";
-import StarIcon from "../Icon/StarIcon";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import {
   EachStarCount,
@@ -9,17 +7,16 @@ import {
   ReviewCount,
   ReviewScore,
 } from "./RatingBox.styled";
+import StarRating from "./StarRating/StarRating";
 
 export type RatingBoxProps = {
   ratingList: number[];
 };
 
-const ICON_WIDTH = "1.4em";
 const STAR_ARR = [5, 4, 3, 2, 1];
 const TOTAL_RATING = STAR_ARR.length;
 
 const RatingBox = ({ ratingList }: RatingBoxProps) => {
-  const themeContext = useContext(ThemeContext);
   const averageRating: string = average(ratingList);
   const starCount: number = Math.floor(Number(averageRating));
 
@@ -55,24 +52,7 @@ const RatingBox = ({ ratingList }: RatingBoxProps) => {
         <ReviewCount>
           ({shortNumberFormat(ratingList.length)} review)
         </ReviewCount>
-        <div className="flex justify-center gap-1">
-          {Array.from(Array(starCount), (e, i) => (
-            <React.Fragment key={`star-yellow-rating--${i}`}>
-              <StarIcon
-                iconWidth={ICON_WIDTH}
-                color={themeContext.yellowColor}
-              />
-            </React.Fragment>
-          ))}
-          {Array.from(Array(TOTAL_RATING - starCount), (e, i) => (
-            <React.Fragment key={`star-gray-rating--${i}`}>
-              <StarIcon
-                iconWidth={ICON_WIDTH}
-                color={themeContext.lightGrayColor}
-              />
-            </React.Fragment>
-          ))}
-        </div>
+        <StarRating star={starCount} justify="center" />
       </div>
       <div className="col-span-7">
         {STAR_ARR.map((star, i) => (

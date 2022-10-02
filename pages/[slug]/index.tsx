@@ -12,6 +12,7 @@ import Rating from "@/components/Rating/Rating";
 import ContentHeader from "@/components/Header/ContentHeader/ContentHeader";
 import PlusCircleIcon from "@/components/Icon/PlusCircleIcon";
 import RatingBox from "@/components/RatingBox/RatingBox";
+import SelectCategory from "@/components/Select/SelectCategory/SelectCategory";
 
 const IMAGES = [
   "/assets/images/sonaal-bangera.jpg",
@@ -53,6 +54,16 @@ const avatarList = [
   "/assets/images/avatar-5.png",
 ];
 
+const categoryList = [
+  { label: "All", isActive: true },
+  { label: "With Photo Only", isActive: false },
+  { label: "5.0", isActive: false },
+  { label: "4.0", isActive: false },
+  { label: "3.0", isActive: false },
+  { label: "2.0", isActive: false },
+  { label: "1.0", isActive: false },
+];
+
 const ratingList = [5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 3, 2];
 
 const Place = () => {
@@ -83,6 +94,7 @@ const Place = () => {
             <Content content={CONTENT} />
             <Rating rating="4.3" reviewCount={1242} avatarList={avatarList} />
             <ContentHeader title="🗯 Review" />
+            <RatingBox ratingList={ratingList} />
             <LinkBox
               padding="0.5em 1.5em"
               label={
@@ -93,7 +105,11 @@ const Place = () => {
               }
               onClick={() => console.log("link box")}
             />
-            <RatingBox ratingList={ratingList} />
+            <ContentHeader title="User Reviews" />
+            <SelectCategory
+              categoryList={categoryList}
+              onClick={() => console.log("select category")}
+            />
           </>
         </Layout>
       </RoundedCornerContent>

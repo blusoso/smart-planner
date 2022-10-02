@@ -5,6 +5,8 @@ type ReadMoreProps = {
   children: string;
 };
 
+const LIMIT_STRING = 150;
+
 const ReadMore = ({ children }: ReadMoreProps) => {
   const content: string = children;
   const [isReadMore, setIsReadMore] = useState(true);
@@ -14,12 +16,15 @@ const ReadMore = ({ children }: ReadMoreProps) => {
   };
 
   const sliceContent = (content: string) => {
-    return content.slice(0, 150);
+    return content.slice(0, LIMIT_STRING);
   };
 
-  return (
-    <>
-      {isReadMore ? sliceContent(content) : content}
+  const renderContent = () => {
+    return isReadMore ? sliceContent(content) : content;
+  };
+
+  const renderReadMore = () => {
+    return (
       <ReadMoreStyle onClick={toggleReadMore}>
         {isReadMore ? (
           <>
@@ -30,6 +35,13 @@ const ReadMore = ({ children }: ReadMoreProps) => {
           <span>show less</span>
         )}
       </ReadMoreStyle>
+    );
+  };
+
+  return (
+    <>
+      {renderContent()}
+      {content.length > LIMIT_STRING && renderReadMore()}
     </>
   );
 };
