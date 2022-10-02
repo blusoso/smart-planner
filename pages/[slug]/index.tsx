@@ -13,6 +13,10 @@ import ContentHeader from "@/components/Header/ContentHeader/ContentHeader";
 import PlusCircleIcon from "@/components/Icon/PlusCircleIcon";
 import RatingBox from "@/components/RatingBox/RatingBox";
 import SelectCategory from "@/components/Select/SelectCategory/SelectCategory";
+import Review from "@/components/Review/Review";
+import ViewAllLink from "@/components/Link/ViewAllLink/ViewAllLink";
+import { placeList } from "..";
+import PlaceCardList from "@/components/Listing/PlaceCardList/PlaceCardList";
 
 const IMAGES = [
   "/assets/images/sonaal-bangera.jpg",
@@ -84,6 +88,7 @@ const Place = () => {
               price={price}
             />
             <LinkBox
+              className="my-3"
               iconRight={
                 <DiagonalArrowRightUpIcon iconWidth="24px" isOutline />
               }
@@ -92,10 +97,16 @@ const Place = () => {
               onClick={() => console.log("link box")}
             />
             <Content content={CONTENT} />
-            <Rating rating="4.3" reviewCount={1242} avatarList={avatarList} />
+            <Rating
+              className="my-4"
+              rating="4.3"
+              reviewCount={1242}
+              avatarList={avatarList}
+            />
             <ContentHeader title="🗯 Review" />
             <RatingBox ratingList={ratingList} />
             <LinkBox
+              className="my-4"
               padding="0.5em 1.5em"
               label={
                 <div className="flex items-center">
@@ -110,6 +121,25 @@ const Place = () => {
               categoryList={categoryList}
               onClick={() => console.log("select category")}
             />
+
+            <div className="my-6">
+              <Review />
+            </div>
+
+            <div>
+              <ContentHeader
+                title="📍 Nearby"
+                link={<ViewAllLink onClick={() => console.log("view all")} />}
+              />
+              <PlaceCardList placeList={placeList} />
+            </div>
+            <div className="-my-12">
+              <ContentHeader
+                title="💘 You Might Like"
+                link={<ViewAllLink onClick={() => console.log("view all")} />}
+              />
+              <PlaceCardList placeList={placeList} />
+            </div>
           </>
         </Layout>
       </RoundedCornerContent>

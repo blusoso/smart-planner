@@ -10,13 +10,14 @@ import {
 import StarRating from "./StarRating/StarRating";
 
 export type RatingBoxProps = {
+  className?: string;
   ratingList: number[];
 };
 
 const STAR_ARR = [5, 4, 3, 2, 1];
 const TOTAL_RATING = STAR_ARR.length;
 
-const RatingBox = ({ ratingList }: RatingBoxProps) => {
+const RatingBox = ({ className = "", ratingList }: RatingBoxProps) => {
   const averageRating: string = average(ratingList);
   const starCount: number = Math.floor(Number(averageRating));
 
@@ -43,7 +44,9 @@ const RatingBox = ({ ratingList }: RatingBoxProps) => {
   };
 
   return (
-    <ReviewBoxContainer className="grid grid-cols-12 gap-6 flex items-center">
+    <ReviewBoxContainer
+      className={`${className} grid grid-cols-12 gap-6 flex items-center`}
+    >
       <div className="col-span-5 text-center">
         <ReviewScore>
           {averageRating}

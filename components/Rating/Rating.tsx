@@ -6,16 +6,22 @@ import { RatingStyled, ReviewCount } from "./Rating.styled";
 import AvatarGrouped from "../AvatarGrouped/AvatarGrouped";
 
 type RatingProps = {
+  className?: string;
   rating: string;
   reviewCount: number;
   avatarList?: any[];
 };
 
-const Rating = ({ rating, reviewCount, avatarList }: RatingProps) => {
+const Rating = ({
+  className = "",
+  rating,
+  reviewCount,
+  avatarList,
+}: RatingProps) => {
   const themeContext = useContext(ThemeContext);
 
   return (
-    <RatingStyled>
+    <RatingStyled className={className}>
       <div className="flex items-center">
         <StarIcon iconWidth="1.125em" color={themeContext.yellowColor} />
         <span className="ml-1">{rating}</span>

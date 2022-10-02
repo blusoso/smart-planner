@@ -18,7 +18,7 @@ export type SelectCategoryProps = {
 
 const SelectCategory = ({ categoryList, onClick }: SelectCategoryProps) => {
   return (
-    <SelectCategoryContainer className="mb-4">
+    <SelectCategoryContainer className="flex mb-4">
       <GradientOverlay />
       {categoryList.map((category: Category, index) => (
         <span key={`${category.label}-${index}`} className="mr-2">

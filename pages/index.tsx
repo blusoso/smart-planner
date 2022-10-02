@@ -22,7 +22,7 @@ const categoryList = [
   { icon: "⛰️", label: "Mountain", isActive: false },
 ];
 
-const placeList = [
+export const placeList = [
   {
     thumbnail: "/assets/images/sonaal-bangera.jpg",
     title: "Grand Canyon",
